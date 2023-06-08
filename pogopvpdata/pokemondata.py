@@ -6,9 +6,9 @@ from . import Pokemon, EnumParser
 logger = logging.getLogger(__name__)
 
 EnumParser = EnumParser()
-PokemonId = EnumParser.parseEnumProto("https://raw.githubusercontent.com/Furtif/POGOProtos/master/base/base.proto",
+PokemonId = EnumParser.parseEnumProto("https://raw.githubusercontent.com/Furtif/POGOProtos/master/base/v0.241.x_p_obf.proto",
                                       "HoloPokemonId")
-Form = EnumParser.parseEnumProto("https://raw.githubusercontent.com/Furtif/POGOProtos/master/base/base.proto", "Form")
+Form = EnumParser.parseEnumProto("https://raw.githubusercontent.com/Furtif/POGOProtos/master/base/v0.241.x_p_obf.proto", "Form")
 
 
 class PokemonData():

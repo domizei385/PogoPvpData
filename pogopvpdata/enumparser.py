@@ -1,6 +1,7 @@
 import configparser
 import requests
 import os
+import json
 from enum import Enum
 
 
@@ -22,6 +23,19 @@ class EnumParser():
         enumDict = self.addEnumInfo(name, enumDict)
         resultingEnum = Enum(name.replace("Holo", ""), enumDict)
         globals()[name.replace("Holo", "")] = resultingEnum
+        return resultingEnum
+
+    def parseJson(self, name):
+        f = open(name + '.json',)
+        data = json.load(f)
+        enumDict = {}
+        for key, value in data.items():
+            enumDict[value] = key
+
+        f.close()
+
+        resultingEnum = Enum(name, enumDict)
+        globals()[name] = resultingEnum
         return resultingEnum
 
     def addEnumInfo(self, name, enumDict):

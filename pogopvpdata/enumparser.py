@@ -26,7 +26,7 @@ class EnumParser():
         return resultingEnum
 
     def parseJson(self, name):
-        f = open(name + '.json',)
+        f = open(os.path.dirname(os.path.abspath(__file__)) + '/' + name + '.json',)
         data = json.load(f)
         enumDict = {}
         for key, value in data.items():
